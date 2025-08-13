@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nós</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+  <header>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="darkModeBtn">
+      <div class="icon">
+        <div class="sun">
+          <div class="rays"></div>
+        </div>
+        <div class="moon">
+          <div class="crater crater1"></div>
+          <div class="crater crater2"></div>
+          <div class="crater crater3"></div>
+        </div>
+      </div>
+    </button>
+    <h1>Sobre Nós</h1>
+    <a href="index.html" style="color:white; text-decoration:none;">← Voltar</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Quem Somos</h2>
+      <p>Somos uma equipe dedicada a ensinar pessoas a usarem melhor seus dispositivos tecnológicos. Acreditamos que
+        todo mundo pode dominar a tecnologia com a orientação certa.</p>
+      <div class="linha"></div>
+      <h2>Nosso Objetivo</h2>
+      <p>Criar tutoriais claros, práticos e acessíveis para usuários de todos os níveis, desde iniciantes até os mais
+        avançados.</p>
+      <div class="linha"></div>
+      <div class="linha2"></div>
+      <div class="contato">
+      <h3>Entre em Contato:</h3>
+      <strong>Email:</strong> <a href="manualdainfor@gmail.com">manualdainfor@gmail.com</a>
+      <strong>Instagram:</strong> <a href="https://www.instagram.com/manual_da_informatica/"
+          target="_blank">@manual_da_informatica</a></li>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Sobre Nós</h4>
+        <p>Somos uma equipe apaixonada por tecnologia, ensinando pessoas a usar melhor seus dispositivos.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="politica.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Redes Sociais</h4>
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com/share/19DPJ6fFZg/" target="_blank">Facebook</a></li> <br>
+          <li><a href="https://www.instagram.com/manual_da_informatica/" target="_blank">Instagram</a></li> <br>
+          <li><a href="https://www.youtube.com/@manual-da-informatica" target="_blank">YouTube</a></li> <br>
+          <li><a href="https://www.tiktok.com/@manual.da.informatica?_t=ZM-8yFLv0YdPWv&_r=1" target="_blank">Tiktok</a>
+          </li> <br>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Tutoriais Tech. Todos os direitos reservados.
+    </div>
+  </footer>
+  <script>function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark ? "on" : "off");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const darkModeSetting = localStorage.getItem("darkMode");
+      if (darkModeSetting === "on") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  </script>
+</body>
+
+</html>

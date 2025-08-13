@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows - Manual da Informática</title>
+  <link rel="stylesheet" href="estilosW.css" />
+</head>
+
+<body>
+  <header>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="darkModeBtn">
+      <div class="icon">
+        <div class="sun">
+          <div class="rays"></div>
+        </div>
+        <div class="moon">
+          <div class="crater crater1"></div>
+          <div class="crater crater2"></div>
+          <div class="crater crater3"></div>
+        </div>
+      </div>
+    </button>
+    <h1>Tutoriais de Windows (PC e Notebook)</h1>
+    <div class="barra-pesquisa">
+      <input type="text" id="campo-pesquisa" placeholder="Pesquisar...">
+    </div>
+    <a href="index.html" class="botao-voltar">← Voltar</a>
+  </header>
+
+  <main>
+    <!-- TUTORIAL 1 -->
+    <section class="conteudo-buscavel" data-tags="redefinir formatar restaurar windows pc notebook">
+      <h2>Como redefinir (formatar) um PC com Windows</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <h3>Windows 10 ⤵︎</h3> <br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/g8k5oZZtye4?si=kBJY1nocgSCVyEk2"
+          title="Como redefinir Windows 10" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Windows 11 ⤵︎</h3> <br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4W-GZZfI3IE?si=DZJVoVdXPdx_UC18"
+          title="Como redefinir Windows 11" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button id="btnReset" class="botao-passo">Ver passo a passo</button>
+      <div id="passo-reset" class="passo-container">
+        <p>⚠️ <strong>Antes de tudo:</strong> Faça backup dos seus arquivos importantes.</p>
+        <p>✅ Vá em <strong>Configurações > Sistema > Recuperação</strong>.</p>
+        <p>✅ Clique em <strong>Restaurar o PC</strong> e escolha se deseja manter ou remover os arquivos.</p>
+        <p>✅ Siga as instruções para iniciar a redefinição.</p>
+        <p>💡 O processo pode demorar alguns minutos e reiniciará o computador automaticamente.</p>
+      </div>
+    </section>
+
+    <!-- TUTORIAL 2 -->
+    <section class="conteudo-buscavel" data-tags="modo escuro claro windows tema">
+      <h2>Como ativar o modo escuro no Windows</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <h3>Windows 10 ⤵︎</h3> <br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/x1omhLmMV5c?si=o_o6GezyZSO2e6SK"
+          title="Modo Escuro Windows 10" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Windows 11 ⤵︎</h3> <br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GK2ZaPFhi3Y?si=2_MLIJsTSE-jKBo_"
+          title="Modo Escuro Windows 11" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button id="btnEscuro" class="botao-passo">Ver passo a passo</button>
+      <div id="passo-escuro" class="passo-container">
+        <p>✅ Acesse <strong>Configurações > Personalização > Cores</strong>.</p>
+        <p>✅ Em "Escolha seu modo", selecione <strong>Escuro</strong>.</p>
+        <p>🎨 Você também pode escolher <em>modo personalizado</em> para deixar o sistema escuro e apps claros (ou
+          vice-versa).</p>
+      </div>
+    </section>
+
+    <!-- TUTORIAL 3 -->
+    <section class="conteudo-buscavel" data-tags="liberar espaço armazenamento windows disco limpeza">
+      <h2>🧹 Como liberar espaço no Windows</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <h3>Windows 10 ⤵︎</h3> <br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6Nt_0jrXgRA?si=uYKGV-XR8E7mOAmt"
+          title="Liberar espaço Windows 10" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <h3>Windows 11 ⤵︎</h3> <br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4LlG1gx9Qsg?si=4iaqJwcooOakOZXF"
+          title="Liberar espaço Windows 11" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button id="btnEspaco" class="botao-passo">Ver passo a passo</button>
+      <div id="passo-espaco" class="passo-container">
+        <p>✅ Abra o <strong>Explorador de Arquivos</strong>, clique com o botão direito no disco e vá em
+          <strong>Propriedades</strong>.</p>
+        <p>✅ Clique em <strong>Limpeza de Disco</strong>.</p>
+        <p>✅ Marque os arquivos que deseja excluir, como "Arquivos Temporários", "Lixeira", etc.</p>
+        <p>✅ Confirme em OK e aguarde.</p>
+        <p>💡 Use o <em>Sensor de Armazenamento</em> em <strong>Configurações > Sistema > Armazenamento</strong> para
+          automatizar.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleTutorial = (btnId, passoId) => {
+        const btn = document.getElementById(btnId);
+        const passo = document.getElementById(passoId);
+        btn.addEventListener('click', () => {
+          passo.classList.toggle('ativo');
+          btn.textContent = passo.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+        });
+      };
+
+      toggleTutorial('btnReset', 'passo-reset');
+      toggleTutorial('btnEscuro', 'passo-escuro');
+      toggleTutorial('btnEspaco', 'passo-espaco');
+
+      const campoPesquisa = document.getElementById('campo-pesquisa');
+      const blocos = document.querySelectorAll('.conteudo-buscavel');
+
+      campoPesquisa.addEventListener('input', () => {
+        const termo = campoPesquisa.value.toLowerCase();
+        blocos.forEach(bloco => {
+          const tags = bloco.dataset.tags.toLowerCase();
+          const titulo = bloco.querySelector('h2').textContent.toLowerCase();
+          bloco.style.display = (tags.includes(termo) || titulo.includes(termo)) ? 'block' : 'none';
+        });
+      });
+    });
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark ? "on" : "off");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const darkModeSetting = localStorage.getItem("darkMode");
+      if (darkModeSetting === "on") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  </script>
+</body>
+
+</html>
