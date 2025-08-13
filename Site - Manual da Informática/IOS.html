@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iOS - Manual da Informática</title>
+  <link rel="stylesheet" href="estilosiOS.css" />
+</head>
+
+<body>
+  <header>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="darkModeBtn">
+      <div class="icon">
+        <div class="sun">
+          <div class="rays"></div>
+        </div>
+        <div class="moon">
+          <div class="crater crater1"></div>
+          <div class="crater crater2"></div>
+          <div class="crater crater3"></div>
+        </div>
+      </div>
+    </button>
+    <h1>Tutoriais de iOS (iPhone e iPad)</h1>
+    <div class="barra-pesquisa">
+      <input type="text" id="campo-pesquisa" placeholder="Pesquisar...">
+    </div>
+    <a href="index.html" class="botao-voltar">← Voltar</a>
+  </header>
+
+  <main>
+    <!-- EXEMPLO DE TUTORIAL 1 -->
+    <section class="conteudo-buscavel" data-tags="formatar redefinir iphone ipad ios">
+      <h2>Como redefinir (formatar) um iPhone ou iPad</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DJXExlIfC5U?si=_uujRXKwocj7v7y1"
+          title="Como redefinir iPhone ou iPad" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button id="btnReset" class="botao-passo">Ver passo a passo</button>
+      <div id="passo-reset" class="passo-container">
+        <p>⚠️ <strong>Antes de começar:</strong> Faça backup no iCloud e verifique se você sabe o Apple ID e a senha.
+        </p>
+        <p>✅ Vá em <strong>Ajustes > Geral > Transferir ou Redefinir iPhone</strong>.</p>
+        <p>✅ Toque em <strong>Apagar Conteúdo e Ajustes</strong>.</p>
+        <p>✅ Insira a senha e confirme. O iPhone irá apagar todos os dados e reiniciar.</p>
+        <p>🔐 Após reiniciar, será necessário fazer login com o Apple ID anterior (proteção contra roubo).</p>
+      </div>
+    </section>
+
+    <!-- EXEMPLO DE TUTORIAL 2 -->
+    <section class="conteudo-buscavel" data-tags="bloquear chamadas mensagens iphone ios">
+      <h2>Como bloquear chamadas e mensagens no iPhone</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/J2gS7m_S82s?si=tMIcZdBBwp0vLp3G"
+          title="Como bloquear chamadas no iPhone" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button id="btnBloqueio" class="botao-passo">Ver passo a passo</button>
+      <div id="passo-bloqueio" class="passo-container">
+        <p>✅ Abra o app <strong>Telefone</strong>, vá em "Recentes" e toque no ícone de "i" ao lado do número.</p>
+        <p>✅ Role para baixo e toque em <strong>"Bloquear este Chamador"</strong>.</p>
+        <p>✅ Para mensagens, abra o app Mensagens, toque na conversa > "i" > "Bloquear este Chamador".</p>
+        <p>⚙️ Você também pode gerenciar contatos bloqueados em <em>Ajustes > Telefone > Contatos Bloqueados</em>.</p>
+      </div>
+    </section>
+
+    <section class="conteudo-buscavel" data-tags="liberar espaço iphone armazenamento ios">
+      <h2>📂 Como liberar espaço no iPhone</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/gxw6sxy84fQ?si=v2plvnagdoFaCAiz"
+          title="Como liberar espaço no iPhone" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <button id="btnEspaco" class="botao-passo">Ver passo a passo</button>
+      <div id="passo-espaco" class="passo-container">
+        <p>✅ Vá em <strong>Ajustes > Geral > Armazenamento do iPhone</strong>.</p>
+        <p>✅ Veja quais apps ocupam mais espaço e considere apagar dados desnecessários.</p>
+        <p>✅ Ative o recurso <strong>"Desinstalar Apps não utilizados"</strong> (libera espaço sem apagar dados).</p>
+        <p>✅ Apague fotos/vídeos duplicados ou antigos. Use o app <em>Arquivos</em> ou o app Fotos.</p>
+        <p>☁️ Ative o <strong>iCloud Fotos</strong> para transferir sua mídia para a nuvem e liberar o celular.</p>
+      </div>
+    </section>
+
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Botão Redefinir iPhone
+      const btnReset = document.getElementById('btnReset');
+      const passoReset = document.getElementById('passo-reset');
+      btnReset.addEventListener('click', () => {
+        passoReset.classList.toggle('ativo');
+        btnReset.textContent = passoReset.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+      });
+
+      // Botão Bloqueio de Chamadas
+      const btnBloqueio = document.getElementById('btnBloqueio');
+      const passoBloqueio = document.getElementById('passo-bloqueio');
+      btnBloqueio.addEventListener('click', () => {
+        passoBloqueio.classList.toggle('ativo');
+        btnBloqueio.textContent = passoBloqueio.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+      });
+
+      // Botão Liberar Espaço
+      const btnEspaco = document.getElementById('btnEspaco');
+      const passoEspaco = document.getElementById('passo-espaco');
+      btnEspaco.addEventListener('click', () => {
+        passoEspaco.classList.toggle('ativo');
+        btnEspaco.textContent = passoEspaco.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+      });
+
+      // Campo de busca (simples, mostra/esconde o bloco conforme o texto)
+      const campoPesquisa = document.getElementById('campo-pesquisa');
+      const blocos = document.querySelectorAll('.conteudo-buscavel');
+
+      campoPesquisa.addEventListener('input', () => {
+        const termo = campoPesquisa.value.toLowerCase();
+        blocos.forEach(bloco => {
+          const tags = bloco.dataset.tags.toLowerCase();
+          const titulo = bloco.querySelector('h2').textContent.toLowerCase();
+          if (tags.includes(termo) || titulo.includes(termo)) {
+            bloco.style.display = 'block'; // mostrar
+          } else {
+            bloco.style.display = 'none'; // esconder
+          }
+        });
+      });
+    });
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark ? "on" : "off");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const darkModeSetting = localStorage.getItem("darkMode");
+      if (darkModeSetting === "on") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  </script>
+</body>
+
+</html>

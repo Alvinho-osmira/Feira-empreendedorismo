@@ -1,0 +1,608 @@
+/* Torna o corpo da página um container flexível na vertical */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Reset e fonte */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  background-color: #0077cc;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  box-sizing: border-box;
+  z-index: 1000;
+
+  gap: 1.5rem;
+}
+
+header h1 {
+  font-size: 1rem;
+  margin-right: auto;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  margin-right: 1rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  right: -250px;
+  width: 250px;
+  height: calc(100% - 60px);
+  background-color: #005fa3;
+  padding: 2rem 1rem;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar nav ul {
+  list-style: none;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  position: relative;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.9s ease;
+  background-color: #005fa3;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid #005fa3;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  /* sombra suave */
+  border-radius: 10px 10px 10px 10px;
+}
+
+.submenu li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #005fa3;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu li a {
+  display: block;
+  padding: 6px 10px;
+  font-size: 0.85em;
+  color: #366bff;
+  text-decoration: none;
+  transition: background-color 0.9s ease;
+}
+
+.submenu li a:hover {
+  background-color: #005fa3;
+}
+
+button,
+.btn {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #005fa3;
+}
+
+/* BOTÃO DE DARK MODE */
+.dark-mode-toggle {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  flex-shrink: 0;
+  margin: 0 0 0 1rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-mode-toggle .icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Sol e Lua do dark mode */
+.sun {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffcc00;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffcc00;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.sun .rays {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(from 0deg, #ffcc00 0deg 10deg, transparent 10deg 20deg);
+  border-radius: 50%;
+  animation: rotateRays 4s linear infinite;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+@keyframes rotateRays {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 2;
+}
+
+.moon .crater {
+  position: absolute;
+  background-color: #cccccc;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.crater1 {
+  width: 8px;
+  height: 8px;
+  top: 12px;
+  left: 14px;
+}
+
+.crater2 {
+  width: 6px;
+  height: 6px;
+  top: 24px;
+  left: 22px;
+}
+
+.crater3 {
+  width: 5px;
+  height: 5px;
+  top: 16px;
+  left: 28px;
+}
+
+/* Ativo no modo escuro */
+body.dark-mode .moon {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+body.dark-mode .sun {
+  transform: scale(0.6);
+  opacity: 0.2;
+  box-shadow: none;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+
+
+
+body.dark-mode .sidebar {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .submenu {
+  background-color: #292929;
+}
+
+body.dark-mode a {
+  color: #aaccff;
+}
+
+.centralizado {
+  text-align: center;
+}
+
+main {
+  margin-top: 60px;
+  padding: 2rem;
+  flex: 1;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  color: #0077cc;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  background-color: #003f73;
+  color: #ffffff;
+  padding: 2rem 1rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ffffff44;
+  padding-bottom: 0.3rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: #cce6ff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #ffffff33;
+  padding-top: 1rem;
+  color: #aad4ff;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.botao-passo {
+  padding: 12px 24px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 15px 0;
+  transition: background-color 0.3s;
+}
+
+.botao-passo:hover {
+  background-color: #1976d2;
+}
+
+.passo-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease, padding 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0 20px;
+  margin-top: 10px;
+  border-left: 4px solid #2196f3;
+  border-radius: 8px;
+}
+
+.passo-container.ativo {
+  max-height: 1500px;
+  padding: 20px;
+}
+
+iframe {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+}
+
+.Samsung {
+  padding: 12px 24px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 15px 0;
+  transition: background-color 0.3s;
+}
+
+.Samsung:hover {
+  background-color: #1976d2;
+}
+
+.box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease, padding 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0 20px;
+  margin-top: 10px;
+  border-left: 4px solid #2196f3;
+  border-radius: 8px;
+}
+
+.box.ativo {
+  max-height: 1500px;
+  padding: 20px;
+}
+
+iframe {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+}
+
+.barra-pesquisa {
+  text-align: center;
+  margin: 20px auto;
+}
+
+#campo-pesquisa {
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.video-container {
+  position: relative;
+  width: 560px;
+  height: 315px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Responsivo no celular */
+@media (max-width: 600px) {
+  .video-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .barra-pesquisa input {
+    width: 90%;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+}
+
+.video-container {
+  position: relative;
+  width: 560px;
+  height: 315px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Responsivo para celular */
+@media (max-width: 600px) {
+  .video-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Botões */
+button {
+  padding: 12px 24px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #1976d2;
+}
+
+/* Exemplo: pesquisa centralizada */
+
+.barra-pesquisa {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+
+  margin-right: 1rem;
+  /* adiciona espaço à direita */
+}
+
+#campo-pesquisa {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.botao-passo {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+
+}
+
+.botao-passo:hover {
+  background-color: #1976d2;
+}
+
+.botao-voltar {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background-color: none;
+  /* opcional */
+  margin-right: 10px;
+  transition: background 0.3s ease;
+}
+
+.botao-voltar:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* efeito hover sutil */
+}

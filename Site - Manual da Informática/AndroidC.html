@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android Celular - Manual da Informática</title>
+  <link rel="stylesheet" href="estilosC.css" />
+</head>
+
+<body>
+  <header>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="darkModeBtn">
+      <div class="icon">
+        <div class="sun">
+          <div class="rays"></div>
+        </div>
+        <div class="moon">
+          <div class="crater crater1"></div>
+          <div class="crater crater2"></div>
+          <div class="crater crater3"></div>
+        </div>
+      </div>
+    </button>
+    <h1>Tutoriais de Androids</h1>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div class="barra-pesquisa">
+        <input type="text" id="campo-pesquisa" placeholder="Pesquisar...">
+      </div>
+      <a href="index.html" class="botao-voltar">← Voltar</a>
+    </div>
+  </header>
+  <main>
+    <!-- FORMATAÇÃO -->
+    <section id="formatacao-android" class="conteudo-buscavel" data-tags="formatar">
+      <h2>Como formatar seu celular Android</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/a-EO4IUGch0" allowfullscreen></iframe>
+      </div>
+
+      <button id="btnPasso" class="botao-passo">Ver passo a passo</button>
+      <div id="conteudoPasso" class="passo-container">
+        <!-- Conteúdo do passo a passo da formatação -->
+        ⚠️ <strong>Antes de formatar:</strong> Faça backup dos seus dados (Google Drive, fotos, WhatsApp, etc).
+        Verifique se sabe o e-mail e senha da conta Google vinculada ao aparelho (evita bloqueio por "proteção FRP").
+        Carregue o celular até pelo menos 50% de bateria.
+        </p>
+        <p>
+          ✅ <strong>Opção 1:</strong> Pelo menu de configurações (mais comum)<br>
+          Vá em Configurações (ou "Ajustes"). Toque em Sistema (ou "Gerenciamento geral", dependendo do modelo). Toque
+          em Redefinir ou Opções de redefinição. Escolha Restaurar dados de fábrica ou Apagar todos os dados. Confirme
+          (talvez peça senha ou PIN). Aguarde o processo terminar (leva alguns minutos).
+        </p>
+        <p>
+          ✅ <strong>Opção 2:</strong> Pelo modo Recovery (caso o aparelho não ligue)<br>
+          Os botões variam por marca/modelo, mas o processo geral é este: Desligue o celular. Pressione e segure uma
+          combinação de botões até entrar no modo recovery.<br><br>
+          <em>Exemplos:</em><br>
+          Samsung: Volume Cima + Botão Power + Botão Bixby (se tiver)<br>
+          Motorola/Xiaomi/Outros: Volume Cima + Power<br>
+          Quando aparecer o logo do Android ou o menu Recovery, solte os botões.<br>
+          Use os botões de volume para navegar até <strong>Wipe data/factory reset</strong>. Pressione Power para
+          confirmar. Selecione "Yes". Ao terminar, selecione <strong>Reboot system now</strong>.
+        </p>
+        <p>
+          ⚠️ <strong>Após a formatação:</strong> O Android pedirá login na última conta Google usada no celular antes do
+          reset (proteção contra roubo). Siga os passos para configurar como novo.
+        </p>
+      </div>
+    </section>
+
+    <!-- LIBERAR ESPAÇO -->
+    <section class="conteudo-buscavel" data-tags="limpeza espaço celular arquivos fotos videos">
+      <h2>Como liberar espaço no celular</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/eEYJxQi_Mk0?si=tehboYEed4hWm3Of" allowfullscreen></iframe>
+      </div>
+
+      <button id="btnLimpeza" class="botao-passo">Ver passo a passo</button>
+      <div id="passos-limpeza" class="passo-container">
+        <!-- Conteúdo da limpeza -->
+        <p> ✅ <strong>1. Limpe arquivos desnecessários:</strong> Vá em <em>Configurações > Armazenamento</em> e veja o
+          que está ocupando espaço. Use o recurso "Limpeza" (disponível em muitos aparelhos Android) para remover
+          arquivos temporários e cache.
+        </p>
+        <p>
+          ✅ <strong>2. Apague mídias repetidas ou grandes:</strong> Use apps como <em>Google Files</em> ou <em>Files by
+            Google</em> que identificam arquivos duplicados, memes e vídeos grandes.
+        </p>
+        <p>
+          ✅ <strong>3. Desinstale apps que você não usa:</strong> Segure o ícone do app e toque em "Desinstalar", ou vá
+          em <em>Configurações > Aplicativos</em> e remova os que não são mais úteis.
+        </p>
+        <p>
+          ✅ <strong>4. Mova arquivos para o Google Fotos ou Drive:</strong> Salve fotos, vídeos e documentos na nuvem e
+          exclua-os do armazenamento interno.
+        </p>
+        <p>
+          ✅ <strong>5. Esvazie a lixeira do WhatsApp e Galeria:</strong> Acesse as opções de armazenamento do WhatsApp
+          (ou do gerenciador de arquivos) e limpe pastas como "Enviados", "Recebidos", "Áudio", etc.
+        </p>
+      </div>
+    </section>
+
+    <!-- BLOQUEAR CHAMADAS -->
+    <section class="conteudo-buscavel" data-tags="bloquear chamadas mensagens spam">
+      <h2>Como bloquear chamadas ou mensagens indesejadas</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/lIGfSqfY7Ws?si=gGeAwjQbuCTrJAaI" allowfullscreen></iframe>
+      </div>
+
+      <button id="btnChamadas" class="botao-passo">Ver passo a passo</button>
+      <div id="passos-chamadas" class="passo-container">
+        <!-- Conteúdo do bloqueio -->
+        <p>✅ <strong>1. Bloquear chamadas pelo histórico:</strong> Abra o app Telefone, vá em "Recentes", toque e segure
+          o número indesejado e selecione "Bloquear" ou "Bloquear número".</p>
+
+        <p>✅ <strong>2. Bloquear por Configurações:</strong> No app Telefone, vá nos três pontinhos > "Configurações" >
+          "Números bloqueados" > "Adicionar número".</p>
+
+        <p>✅ <strong>3. Bloquear SMS:</strong> Abra o app Mensagens, entre na conversa, toque nos três pontinhos e
+          escolha "Bloquear e denunciar spam".</p>
+
+        <p>✅ <strong>4. Usar apps contra spam:</strong> Baixe apps como <em>Truecaller</em> ou <em>Hiya</em> para
+          bloquear chamadas automáticas e identificar números desconhecidos.</p>
+
+        <p>🔒 <strong>Dica:</strong> Números bloqueados não conseguem ligar nem mandar mensagens SMS. Você ainda pode
+          desbloqueá-los nas mesmas opções depois.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    const campoPesquisa = document.getElementById('campo-pesquisa');
+    const blocos = document.querySelectorAll('.conteudo-buscavel');
+
+    campoPesquisa.addEventListener('input', () => {
+      const termo = campoPesquisa.value.toLowerCase();
+      blocos.forEach(bloco => {
+        const tags = bloco.dataset.tags.toLowerCase();
+        const titulo = bloco.textContent.toLowerCase();
+        bloco.style.display = tags.includes(termo) || titulo.includes(termo) ? 'block' : 'none';
+      });
+    });
+
+    const btnPasso = document.getElementById('btnPasso');
+    const conteudoPasso = document.getElementById('conteudoPasso');
+    btnPasso.addEventListener('click', () => {
+      conteudoPasso.classList.toggle('ativo');
+      btnPasso.textContent = conteudoPasso.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+    });
+
+    const btnLimpeza = document.getElementById('btnLimpeza');
+    const boxLimpeza = document.getElementById('passos-limpeza');
+    btnLimpeza.addEventListener('click', () => {
+      boxLimpeza.classList.toggle('ativo');
+      btnLimpeza.textContent = boxLimpeza.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+    });
+
+    const btnChamadas = document.getElementById('btnChamadas');
+    const boxChamadas = document.getElementById('passos-chamadas');
+    btnChamadas.addEventListener('click', () => {
+      boxChamadas.classList.toggle('ativo');
+      btnChamadas.textContent = boxChamadas.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+    });
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark ? "on" : "off");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const darkModeSetting = localStorage.getItem("darkMode");
+      if (darkModeSetting === "on") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  </script>
+</body>
+
+</html>

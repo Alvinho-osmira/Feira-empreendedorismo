@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux - Manual da Informática</title>
+  <link rel="stylesheet" href="estilosC.css" />
+</head>
+
+<body>
+  <header>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="darkModeBtn">
+      <div class="icon">
+        <div class="sun">
+          <div class="rays"></div>
+        </div>
+        <div class="moon">
+          <div class="crater crater1"></div>
+          <div class="crater crater2"></div>
+          <div class="crater crater3"></div>
+        </div>
+      </div>
+    </button>
+    <h1>Tutoriais de Linux (PC e Notebook)</h1>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div class="barra-pesquisa">
+        <input type="text" id="campo-pesquisa" placeholder="Pesquisar...">
+      </div>
+      <a href="index.html" class="botao-voltar">← Voltar</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- INSTALAÇÃO -->
+    <section class="conteudo-buscavel" data-tags="instalar ubuntu linux mint debian">
+      <h2>Como instalar uma distribuição Linux</h2>
+      <p>Confira o passo a passo em vídeo (em português):</p><br>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/NKkWNPJVZa0?si=ONVZEYsj3-2LnsZw" allowfullscreen></iframe>
+      </div>
+
+      <button id="btnInstalacao" class="botao-passo">Ver passo a passo</button>
+      <div id="passos-instalacao" class="passo-container">
+        <p>⚠️ <strong>Recomendação:</strong> Use um pendrive com pelo menos <strong>8 GB de espaço</strong>
+          (preferencialmente 16 GB ou mais) para criar o instalador do Linux</p>
+        <p>✅ <strong>1. Baixe a imagem ISO:</strong> Acesse o site oficial da distribuição (como Ubuntu, Linux Mint,
+          Fedora).</p>
+        <p>✅ <strong>2. Crie um pendrive bootável:</strong> Use programas como Rufus (Windows) ou balenaEtcher (Linux)
+          para gravar a ISO.</p>
+        <p>✅ <strong>3. Inicie pelo pendrive:</strong> Reinicie o computador, entre na BIOS/UEFI e altere a ordem de
+          boot.</p>
+        <p>✅ <strong>4. Siga o assistente de instalação:</strong> Escolha idioma, fuso horário, tipo de instalação (usar
+          disco inteiro ou particionar manualmente).</p>
+        <p>✅ <strong>5. Finalize:</strong> Aguarde a instalação e reinicie. Remova o pendrive quando solicitado.</p>
+      </div>
+    </section>
+
+    <!-- COMANDOS BÁSICOS -->
+    <section class="conteudo-buscavel" data-tags="terminal comandos linux básicos">
+      <h2>Comandos básicos do terminal Linux</h2>
+      <p>Aprenda os comandos essenciais para iniciantes:</p><br>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/JEhVB4VHsTI?si=fGve_6UnJFsm1-tl" allowfullscreen></iframe>
+      </div>
+
+      <button id="btnComandos" class="botao-passo">Ver passo a passo</button>
+      <div id="passos-comandos" class="passo-container">
+        <p>✅ <strong>1. Navegação:</strong> <code>cd</code> (entrar em diretório), <code>ls</code> (listar arquivos),
+          <code>pwd</code> (caminho atual).</p>
+        <p>✅ <strong>2. Manipulação de arquivos:</strong> <code>cp</code> (copiar), <code>mv</code> (mover/renomear),
+          <code>rm</code> (remover).</p>
+        <p>✅ <strong>3. Permissões:</strong> <code>chmod</code> (alterar permissões), <code>chown</code> (alterar dono).
+        </p>
+        <p>✅ <strong>4. Pacotes:</strong> <code>sudo apt update</code>, <code>sudo apt install nome-do-pacote</code>
+          (para Debian/Ubuntu).</p>
+        <p>✅ <strong>5. Ajuda:</strong> <code>man comando</code> ou <code>comando --help</code>.</p>
+      </div>
+    </section>
+
+    <!-- GERENCIAMENTO DE PACOTES -->
+    <section class="conteudo-buscavel" data-tags="apt yum dnf snap flatpak pacotes">
+      <h2>Como instalar e remover programas no Linux</h2>
+      <p>Confira o passo a passo em vídeo:</p><br>
+      <h3>Linux (Todas as distros) ⤵︎</h3> <br>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/FW2iZAT1vxk?si=Y9EckVIya0QqeoWg" allowfullscreen></iframe>
+      </div>
+
+      <button id="btnPacotes" class="botao-passo">Ver passo a passo</button>
+      <div id="passos-pacotes" class="passo-container">
+        <p>✅ <strong>APT (Debian/Ubuntu):</strong> <code>sudo apt install nome</code> para instalar,
+          <code>sudo apt remove nome</code> para remover.</p>
+        <p>✅ <strong>DNF/YUM (Fedora/Red Hat):</strong> <code>sudo dnf install nome</code> ou
+          <code>sudo yum install nome</code>.</p>
+        <p>✅ <strong>Snap:</strong> <code>sudo snap install nome</code>.</p>
+        <p>✅ <strong>Flatpak:</strong> <code>flatpak install flathub org.app.Nome</code>.</p>
+        <p>✅ <strong>Dica:</strong> Sempre atualize com <code>sudo apt update && sudo apt upgrade</code> (ou
+          equivalente).</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    const campoPesquisa = document.getElementById('campo-pesquisa');
+    const blocos = document.querySelectorAll('.conteudo-buscavel');
+
+    campoPesquisa.addEventListener('input', () => {
+      const termo = campoPesquisa.value.toLowerCase();
+      blocos.forEach(bloco => {
+        const tags = bloco.dataset.tags.toLowerCase();
+        const titulo = bloco.textContent.toLowerCase();
+        bloco.style.display = tags.includes(termo) || titulo.includes(termo) ? 'block' : 'none';
+      });
+    });
+
+    const btnInstalacao = document.getElementById('btnInstalacao');
+    const boxInstalacao = document.getElementById('passos-instalacao');
+    btnInstalacao.addEventListener('click', () => {
+      boxInstalacao.classList.toggle('ativo');
+      btnInstalacao.textContent = boxInstalacao.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+    });
+
+    const btnComandos = document.getElementById('btnComandos');
+    const boxComandos = document.getElementById('passos-comandos');
+    btnComandos.addEventListener('click', () => {
+      boxComandos.classList.toggle('ativo');
+      btnComandos.textContent = boxComandos.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+    });
+
+    const btnPacotes = document.getElementById('btnPacotes');
+    const boxPacotes = document.getElementById('passos-pacotes');
+    btnPacotes.addEventListener('click', () => {
+      boxPacotes.classList.toggle('ativo');
+      btnPacotes.textContent = boxPacotes.classList.contains('ativo') ? 'Ocultar passo a passo' : 'Ver passo a passo';
+    });
+
+    function toggleDarkMode() {
+      const isDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("darkMode", isDark ? "on" : "off");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const darkModeSetting = localStorage.getItem("darkMode");
+      if (darkModeSetting === "on") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  </script>
+</body>
+
+</html>
